@@ -17,10 +17,12 @@ export class SearchBar extends Component<AppProps, null> {
 
   handleFilterChange(e) {
     this.props.onNameFilterChange(e.target.value);
+    console.log(e.target.value);
   }
 
   handleInStockOnlyChange(e) {
     this.props.onInStockOnlyChange(e.target.value);
+    console.log(e.target.value);
   }
 
   render() {
