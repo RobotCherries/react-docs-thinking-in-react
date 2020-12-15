@@ -1,3 +1,8 @@
 * {
   font-family: Lato;
 }
+
+/* Table */
+th {
+  font-weight: 600;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { SearchBar } from ".";
+import { ProductTable } from ".";
 
 interface AppProps {}
 interface AppState {
@@ -40,6 +41,10 @@ export class FilterableProductTable extends Component<AppProps, AppState> {
           onNameFilterChange={this.handleNameFilterChange}
           onInStockOnlyChange={this.handleInStockOnlyChange}
         />
+
+        <br />
+
+        <ProductTable />
       </div>
     );
   }
