@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import { SearchBar } from ".";
 import { ProductTable } from ".";
 
-interface AppProps {}
+interface Product {
+  category: string;
+  price: string;
+  stocked: string;
+  name: string;
+}
+interface AppProps {
+  products: Product[];
+}
 interface AppState {
   nameFilter: string;
   inStockOnly: boolean;
@@ -44,7 +52,7 @@ export class FilterableProductTable extends Component<AppProps, AppState> {
 
         <br />
 
-        <ProductTable />
+        <ProductTable products={this.props.products} />
       </div>
     );
   }

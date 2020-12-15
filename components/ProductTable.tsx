@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
-interface AppProps {}
+interface Product {
+  category: string;
+  price: string;
+  stocked: string;
+  name: string;
+}
+interface AppProps {
+  products: Product[];
+}
 interface AppState {}
 
 export class ProductTable extends Component<AppProps, AppState> {
