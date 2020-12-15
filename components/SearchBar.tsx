@@ -6,8 +6,9 @@ interface AppProps {
   onNameFilterChange: any;
   onInStockOnlyChange: any;
 }
+interface AppState {}
 
-export class SearchBar extends Component<AppProps, null> {
+export class SearchBar extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
 
