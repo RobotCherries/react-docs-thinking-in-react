@@ -15,10 +15,12 @@ export default class App extends Component<AppProps, AppState> {
     super(props);
   }
 
+  products: IProduct[] = PRODUCTS;
+
   render() {
     return (
       <div>
-        <FilterableProductTable products={this.props.products} />
+        <FilterableProductTable products={this.products} />
       </div>
     );
   }

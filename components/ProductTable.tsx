@@ -12,6 +12,8 @@ export class ProductTable extends Component<AppProps, AppState> {
   }
 
   render() {
+    const products: IProduct[] = this.props.products;
+
     return (
       <div>
         <table>
@@ -23,14 +25,12 @@ export class ProductTable extends Component<AppProps, AppState> {
           </thead>
 
           <tbody>
-            <tr>
-              <td>cell</td>
-              <td>cell</td>
-            </tr>
-            <tr>
-              <td>cell</td>
-              <td>cell</td>
-            </tr>
+            {this.props.products.map((product: IProduct) => (
+              <tr>
+                <td>{product.name}</td>
+                <td>{product.price}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
