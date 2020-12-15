@@ -1,4 +1,6 @@
-export const PRODUCTS: any[] = [
+import { IProduct } from "./interfaces";
+
+export const PRODUCTS: IProduct[] = [
   {
     category: "Sporting Goods",
     price: "$49.99",

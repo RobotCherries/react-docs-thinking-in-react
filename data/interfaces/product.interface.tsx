@@ -1,6 +1,6 @@
-export default interface IProduct {
+export interface IProduct {
   category: string;
   price: string;
-  stocked: string;
+  stocked: boolean;
   name: string;
 }
