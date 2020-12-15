@@ -21,8 +21,8 @@ export class SearchBar extends Component<AppProps, null> {
   }
 
   handleInStockOnlyChange(e) {
-    this.props.onInStockOnlyChange(e.target.value);
-    console.log(e.target.value);
+    this.props.onInStockOnlyChange(e.target.checked);
+    console.log(e.target.checked);
   }
 
   render() {
@@ -44,7 +44,7 @@ export class SearchBar extends Component<AppProps, null> {
           <input
             type="checkbox"
             name="inStockOnly"
-            value={this.props.inStockOnly}
+            checked={this.props.inStockOnly}
             onChange={this.handleInStockOnlyChange}
           />
           Only show products that are in stock.
