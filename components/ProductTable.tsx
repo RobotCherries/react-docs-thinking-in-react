@@ -1,11 +1,6 @@
 import React, { Component } from "react";
+import { Product } from "../data/products";
 
-interface Product {
-  category: string;
-  price: string;
-  stocked: string;
-  name: string;
-}
 interface AppProps {
   products: Product[];
 }
