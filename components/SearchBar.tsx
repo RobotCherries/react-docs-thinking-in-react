@@ -33,7 +33,7 @@ export class SearchBar extends Component<AppProps, null> {
       <div>
         <input
           type="text"
-          placeholder="search"
+          placeholder="Search..."
           value={this.props.nameFilter}
           onChange={this.handleFilterChange}
         />
