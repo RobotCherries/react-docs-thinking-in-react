@@ -10,15 +10,19 @@ interface AppState {
 export class FilterableProductTable extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
+
+    // State
     this.state = {
       nameFilter: "",
       inStockOnly: true
     };
 
+    // Handles
     this.handleNameFilterChange = this.handleNameFilterChange.bind(this);
     this.handleInStockOnlyChange = this.handleInStockOnlyChange.bind(this);
   }
 
+  // Handles
   handleNameFilterChange(nameFilter) {
     this.setState({ nameFilter: nameFilter });
   }
@@ -28,15 +32,11 @@ export class FilterableProductTable extends Component<AppProps, AppState> {
   }
 
   render() {
-    // console.log(this.state);
-    const nameFilter = this.state.nameFilter;
-    const inStockOnly = this.state.inStockOnly;
-
     return (
       <div>
         <SearchBar
-          nameFilter={nameFilter}
-          inStockOnly={inStockOnly}
+          nameFilter={this.state.nameFilter}
+          inStockOnly={this.state.inStockOnly}
           onNameFilterChange={this.handleNameFilterChange}
           onInStockOnlyChange={this.handleInStockOnlyChange}
         />
