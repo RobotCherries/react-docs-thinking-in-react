@@ -53,7 +53,11 @@ export class FilterableProductTable extends Component<AppProps, AppState> {
 
         <br />
 
-        <ProductTable products={this.props.products} />
+        <ProductTable
+          products={this.props.products}
+          filterText={this.state.nameFilter}
+          inStockOnly={this.state.inStockOnly}
+        />
       </div>
     );
   }

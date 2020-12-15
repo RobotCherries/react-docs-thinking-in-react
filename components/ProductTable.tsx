@@ -3,6 +3,8 @@ import { IProduct } from "../data/interfaces";
 
 interface AppProps {
   products: IProduct[];
+  filterText: string;
+  inStockOnly: boolean;
 }
 interface AppState {}
 
@@ -13,6 +15,40 @@ export class ProductTable extends Component<AppProps, AppState> {
 
   render() {
     const products: IProduct[] = this.props.products;
+    const filterText: string = this.props.filterText;
+    const inStockOnly: boolean = this.props.inStockOnly;
+
+    const rows = [];
+    let lastCategory = null;
+
+    this.props.products.forEach(product => {
+      if (product.name.indexOf(filterText) === -1) {
+        return;
+      }
+      if (inStockOnly && !product.stocked) {
+        return;
+      }
+      if (product.category !== lastCategory) {
+        rows.push(
+          // <ProductCategoryRow
+          //   category={product.category}
+          //   key={product.category} />
+          <tr>
+            <td colspan="2">
+              <b>{product.category}</b>
+            </td>
+          </tr>
+        );
+      }
+      rows.push(
+        // <ProductRow product={product} key={product.name} />
+        <tr>
+          <td>{product.name}</td>
+          <td>{product.price}</td>
+        </tr>
+      );
+      lastCategory = product.category;
+    });
 
     return (
       <div>
@@ -24,14 +60,7 @@ export class ProductTable extends Component<AppProps, AppState> {
             </tr>
           </thead>
 
-          <tbody>
-            {this.props.products.map((product: IProduct) => (
-              <tr>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-              </tr>
-            ))}
-          </tbody>
+          <tbody>{rows}</tbody>
         </table>
       </div>
     );
