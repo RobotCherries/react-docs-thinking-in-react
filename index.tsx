@@ -2,17 +2,23 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import { FilterableProductTable } from "./components";
 import { PRODUCTS } from "./data";
+import { IProduct } from "./data/interfaces";
 import "./style.css";
 
-interface AppProps {}
+interface AppProps {
+  products: IProduct[];
+}
 interface AppState {}
 
 export default class App extends Component<AppProps, AppState> {
-  products = PRODUCTS;
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
-        <FilterableProductTable products={this.products} />
+        <FilterableProductTable products={this.props.products} />
       </div>
     );
   }
