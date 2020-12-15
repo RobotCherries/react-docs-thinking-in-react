@@ -4,22 +4,41 @@ import { SearchBar } from "./components";
 import "./style.css";
 
 interface AppProps {}
-interface AppState {
-  name: string;
-}
+interface AppState {}
 
 class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
-      name: "React"
+      nameFilter: "",
+      inStockOnly: true
     };
+
+    this.handleNameFilterChange = this.handleNameFilterChange.bind(this);
+    this.handleInStockOnlyChange = this.handleInStockOnlyChange.bind(this);
+  }
+
+  handleNameFilterChange(nameFilter) {
+    this.setState({ nameFilter: nameFilter });
+  }
+
+  handleInStockOnlyChange(inStockOnly) {
+    this.setState({ inStockOnly: inStockOnly });
   }
 
   render() {
+    // console.log(this.state);
+    const nameFilter = this.state.nameFilter;
+    const inStockOnly = this.state.inStockOnly;
+
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          nameFilter={nameFilter}
+          inStockOnly={inStockOnly}
+          onNameFilterChange={this.handleNameFilterChange}
+          onInStockOnlyChange={this.handleInStockOnlyChange}
+        />
       </div>
     );
   }
