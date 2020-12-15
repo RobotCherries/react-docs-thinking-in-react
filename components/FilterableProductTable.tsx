@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { SearchBar } from ".";
 import { ProductTable } from ".";
+import { IProduct } from "../data/interfaces";
 
 interface Product {
   category: string;
@@ -9,7 +10,7 @@ interface Product {
   name: string;
 }
 interface AppProps {
-  products: Product[];
+  products: IProduct[];
 }
 interface AppState {
   nameFilter: string;
