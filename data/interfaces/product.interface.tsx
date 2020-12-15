@@ -1,4 +1,4 @@
-export interface IProduct {
+export default interface IProduct {
   category: string;
   price: string;
   stocked: string;

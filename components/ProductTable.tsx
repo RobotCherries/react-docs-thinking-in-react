@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Product } from "../data/products";
 
 interface AppProps {
-  products: Product[];
+  products: any[];
 }
 interface AppState {}
 

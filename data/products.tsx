@@ -1,4 +1,4 @@
-export const PRODUCTS: IProduct[] = [
+export const PRODUCTS: any[] = [
   {
     category: "Sporting Goods",
     price: "$49.99",
