@@ -5,6 +5,7 @@
 /* Table */
 table {
   width: 240px;
+  border-collapse: collapse;
 }
 
 thead tr,

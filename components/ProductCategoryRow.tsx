@@ -14,7 +14,7 @@ export class ProductCategoryRow extends Component<AppProps, AppState> {
   render() {
     return (
       <tr>
-        <td>
+        <td colspan="2">
           <b>{this.props.category}</b>
         </td>
       </tr>
