@@ -24,7 +24,7 @@ export class FilterableProductTable extends Component<AppProps, AppState> {
     // State
     this.state = {
       nameFilter: "",
-      inStockOnly: true
+      inStockOnly: false
     };
 
     // Handles

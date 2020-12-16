@@ -25,3 +25,7 @@ thead tr th {
 tbody tr td {
   border-bottom: 1px solid #eee;
 }
+
+.danger {
+  color: red !important;
+}

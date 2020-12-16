@@ -12,9 +12,15 @@ export class ProductRow extends Component<AppProps, AppState> {
   }
 
   render() {
+    const isOutOfStock = !this.props.product.stocked;
+
     return (
       <tr>
-        <td>{this.props.product.name}</td>
+        <td>
+          <span className={isOutOfStock && "danger"}>
+            {this.props.product.name}
+          </span>
+        </td>
         <td>{this.props.product.price}</td>
       </tr>
     );

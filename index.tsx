@@ -5,9 +5,7 @@ import { PRODUCTS } from "./data";
 import { IProduct } from "./data/interfaces";
 import "./style.css";
 
-interface AppProps {
-  products: IProduct[];
-}
+interface AppProps {}
 interface AppState {}
 
 export default class App extends Component<AppProps, AppState> {
