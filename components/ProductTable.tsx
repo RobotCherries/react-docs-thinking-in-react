@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProductRow } from ".";
+import { ProductCategoryRow, ProductRow } from ".";
 import { IProduct } from "../data/interfaces";
 
 interface AppProps {
@@ -31,14 +31,10 @@ export class ProductTable extends Component<AppProps, AppState> {
       }
       if (product.category !== lastCategory) {
         rows.push(
-          // <ProductCategoryRow
-          //   category={product.category}
-          //   key={product.category} />
-          <tr>
-            <td colspan="2">
-              <b>{product.category}</b>
-            </td>
-          </tr>
+          <ProductCategoryRow
+            category={product.category}
+            key={product.category}
+          />
         );
       }
       rows.push(<ProductRow product={product} key={product.name} />);
